@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#075985">
+  <title>Nerja – audiowandeling en museum</title>
+  <meta name="description" content="Audiobegeleiding voor de rondleiding door Nerja en het Museum van Nerja.">
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <img src="assets/images/hoofdfoto.jpeg" alt="Panoramisch uitzicht over Nerja en de Middellandse Zee">
+    <div class="hero-shade"></div>
+    <div class="hero-copy">
+      <p class="eyebrow">Ontdek Nerja</p>
+      <h1>Audiowandeling en museum</h1>
+    </div>
+  </header>
+
+  <main>
+    <section class="intro" aria-labelledby="welkom">
+      <h2 id="welkom">Welkom in Nerja</h2>
+      <p>Nerja is een sfeervolle kustplaats aan de Costa del Sol, bekend om haar mooie stranden, het Balcón de Europa en de wereldberoemde grotten van Nerja.</p>
+      <p>Tijdens ons bezoek aan het Museum van Nerja maken we kennis met de rijke geschiedenis van de stad, van de prehistorie tot vandaag. Archeologische vondsten, historische voorwerpen, afbeeldingen en filmpjes vertellen ons meer over de vroegere bewoners en de ontwikkeling van Nerja tot de levendige kustplaats die we vandaag kennen.</p>
+    </section>
+
+    <nav class="choices" aria-label="Kies een audiobegeleiding">
+      <button class="choice active" type="button" data-target="rondleiding" aria-pressed="true">
+        <span class="choice-number">14 haltes</span>
+        <strong>Audiowandeling door Nerja</strong>
+        <span>Bekijk de route en luister onderweg.</span>
+      </button>
+      <button class="choice" type="button" data-target="museum" aria-pressed="false">
+        <span class="choice-number">36 fragmenten</span>
+        <strong>Museum van Nerja</strong>
+        <span>Luister in de volgorde van het museumbezoek.</span>
+      </button>
+    </nav>
+
+    <section id="rondleiding" class="guide active" aria-labelledby="rondleiding-title">
+      <div class="section-heading">
+        <p class="eyebrow dark">Buiten in Nerja</p>
+        <h2 id="rondleiding-title">Audiowandeling door Nerja</h2>
+        <p>Volg de route en kies bij iedere halte het bijbehorende audiofragment.</p>
+      </div>
+      <div class="route-card">
+        <div id="map" aria-label="Kaart van de wandelroute door Nerja"></div>
+        <div class="route-actions">
+          <span>Routebestand voor je wandelapp</span>
+          <a href="assets/route/rondleiding-nerja.gpx" download>Download de GPX-route</a>
+        </div>
+      </div>
+      <div id="walk-list" class="audio-grid"></div>
+    </section>
+
+    <section id="museum" class="guide" aria-labelledby="museum-title" hidden>
+      <div class="section-heading">
+        <p class="eyebrow dark">Binnen in het museum</p>
+        <h2 id="museum-title">Museum van Nerja</h2>
+        <p>Start bij nummer 1 en volg daarna de nummers tijdens je bezoek.</p>
+      </div>
+      <div id="museum-list" class="audio-grid"></div>
+    </section>
+  </main>
+
+  <footer>Veel luister- en wandelplezier in Nerja.</footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
